@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="UserId" formControlName="userId" name="userId">
+              <mat-error *ngIf="loginForm.get('userId').touched && loginForm.get('userId').errors?.required">
+                UserId is required.
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" formControlName="password" type="password" name="password">
+              <mat-error *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required">
+                Password is required.
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <span *ngIf="invalid">
+        <mat-error>Invalid userId & password!</mat-error>
+      </span>
+      <div class="wrapper">
+        <button mat-raised-button type="submit" [disabled]="loginForm.invalid" color="primary">Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <div class="wrapper">
+      <button mat-raised-button [disabled]="loginForm.invalid" (click)="login()" color="primary">Login</button>
+    </div>
+  </mat-card-actions> -->
+</mat-card>

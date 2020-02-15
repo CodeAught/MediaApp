@@ -1,0 +1,8 @@
+<mat-grid-list cols="4" rowHeight="4:3">
+  <mat-grid-tile *ngFor="let image of images">
+    <figure>
+      <figcaption>{{ image.label | titlecase }}</figcaption>
+      <img [src]="image.image">
+    </figure>
+  </mat-grid-tile>
+</mat-grid-list>

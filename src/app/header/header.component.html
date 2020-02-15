@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+    <div routerLinkActive="active" class="reporttopnav">
+      <a routerLinkActive="active" routerLink="home">Home</a>
+      <a *ngIf="currentUser" routerLinkActive="active" routerLink="gallery">Gallery</a>
+      <a routerLinkActive="active" routerLink="about">About</a>
+      <a *ngIf="!currentUser" (click)="openLoginDialog()">Login</a>
+      <a *ngIf="currentUser" (click)="onLogout()">Logout</a>
+      <span>{{ currentUser?.username }}</span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

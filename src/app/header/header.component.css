@@ -1,0 +1,38 @@
+.reporttopnav a {
+  /* color: #2f2f2f; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 15px;
+  position: relative;
+  cursor: pointer;
+}
+.reporttopnav a:hover {
+  color:#f5811e;
+}
+.reporttopnav a.active {
+  color:#f5811e;
+}
+.reporttopnav a.active:before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  background: #f5811e;
+}
+.reporttopnav a.active.highlight {
+  color:#f5811e;
+}
+.reporttopnav a.highlight {
+  color:#0d55b5;
+  position: relative;
+}
+.reporttopnav a.highlight .new {
+  position: absolute;
+  top:-5px;
+}
+.menu-spacer {
+  flex: 1 1 auto;
+}
